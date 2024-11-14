@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IURI - DESENVOLVEDOR RPA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header com menu de navegação -->
+    <header>
+        <div class="logo">DEV. <span>IURI</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre Mim</a></li>
+                <li><a href="#portfolio">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Slider (Agora diretamente abaixo do header) -->
+    <section class="slider" id="home">
+        <div class="slides-container">
+            <div class="slide active">
+                <h1>CREATE & UNIQUE DESIGN</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="slide">
+                <h1>INNOVATIVE IDEAS</h1>
+                <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+            </div>
+            <div class="slide">
+                <h1>CREATIVITY AT ITS BEST</h1>
+                <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.</p>
+            </div>
+        </div>
+        <!-- Controle de Navegação -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
+    <!-- Seções do site -->
+    <section id="about">
+        <h2>Sobre mim</h2>
+        <p>Conteúdo da seção sobre nós...</p>
+    </section>
+
+    <section id="portfolio">
+        <h2>Projetos</h2>
+        <p>Conteúdo do portfólio...</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contato</h2>
+        <p>Conteúdo de contato...</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
