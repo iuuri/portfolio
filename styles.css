@@ -85,7 +85,7 @@ header::after {
     text-align: center;
     background-color: #1d1d1d;
     color: #ffffff;
-    padding: 60px 20px; /* Aumentei a altura aqui */
+    padding: 0px 20px; /* Aumentei a altura aqui */
     cursor: default;
 }
 
@@ -149,10 +149,11 @@ header::after {
 
 .slider h1 {
     font-family: 'BigNoodleTitling', sans-serif;
-    font-size: 76px;
+    font-size: 100px;
     position: relative; /* Necessário para o pseudo-elemento */
     display: inline-block; /* Permite controle preciso do pseudo-elemento */
     padding: 10px 20px; /* Adiciona um pouco de espaço ao redor do texto */
+    margin: 15;
 }
 
 /* Traço superior no início do texto */
@@ -178,5 +179,5 @@ header::after {
 .slider p {
     font-family: 'Raleway', sans-serif;
     font-weight: 600; /* Utilizando Raleway SemiBold */
-    font-size: 16px;
+    font-size: 20px;
 }
