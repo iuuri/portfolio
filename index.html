@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IURI - DESENVOLVEDOR RPA</title>
+    <!-- Importando as fontes BigNoodleTitling e Raleway-SemiBold -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap">
+    <style>
+        @font-face {
+            font-family: 'BigNoodleTitling';
+            src: url('https://example.com/BigNoodleTitling.ttf'); /* Substitua com a URL real do arquivo .ttf */
+        }
+    </style>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Header com menu de navegação -->
     <header>
@@ -20,29 +27,32 @@
         </nav>
     </header>
 
-    <!-- Slider (Agora diretamente abaixo do header) -->
-    <section class="slider" id="home">
-        <div class="slides-container">
-            <div class="slide active">
-                <h1>CREATE & UNIQUE DESIGN</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div class="slide">
-                <h1>INNOVATIVE IDEAS</h1>
-                <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
-            </div>
-            <div class="slide">
-                <h1>CREATIVITY AT ITS BEST</h1>
-                <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.</p>
-            </div>
+<!-- Slider (Agora diretamente abaixo do header) -->
+<section class="slider" id="home">
+    <div class="slides-container">
+        <div class="slide active">
+            <h1>Lorem ipsum dolor </h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-        <!-- Controle de Navegação -->
-        <div class="dots-container">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+        <div class="slide">
+            <h1>Lorem ipsum dolor</h1>
+            <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
         </div>
-    </section>
+        <div class="slide">
+            <h1>Lorem ipsum dolor</h1>
+            <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.</p>
+        </div>
+    </div>
+    <!-- Controle de Navegação -->
+    <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+</section>
+
+<!-- Divisor triangular -->
+<div class="triangle-divider"></div>
 
     <!-- Seções do site -->
     <section id="about">

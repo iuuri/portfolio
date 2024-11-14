@@ -1,6 +1,3 @@
-/* Importando a fonte Raleway do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
-
 /* Estilos Gerais */
 body {
     margin: 0;
@@ -22,12 +19,12 @@ header {
 
 /* Estilo da Logo */
 .logo {
-    font-size: 15px; /* Tamanho da fonte ajustado */
-    font-weight: normal; /* Peso da fonte ajustado */
-    font-family: 'Raleway', sans-serif; /* Fonte Raleway-ExtraBold */
+    font-size: 15px;
+    font-weight: normal;
+    font-family: 'Raleway', sans-serif;
     color: #ffffff;
     margin-right: 30px;
-    cursor: pointer; /* Cursor de mãozinha no logo */
+    cursor: pointer;
 }
 
 .logo span {
@@ -88,7 +85,7 @@ header::after {
     text-align: center;
     background-color: #1d1d1d;
     color: #ffffff;
-    padding: 60px 20px;
+    padding: 60px 20px; /* Aumentei a altura aqui */
     cursor: default;
 }
 
@@ -111,29 +108,75 @@ header::after {
 
 .dots-container {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 150px;
 }
 
+/* Estilo dos bullets (dots) */
 .dot {
-    height: 15px;
-    width: 15px;
+    height: 12px; /* Reduzi o tamanho */
+    width: 12px;  /* Reduzi o tamanho */
     margin: 0 5px;
-    background-color: #ffffff;
+    border: 2px solid #ffffff; /* Borda branca para os bullets vazados */
+    background-color: transparent; /* Deixa o fundo transparente */
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.dot.active {
+    background-color: #ff4040; /* Preenchido quando ativo */
+    border-color: #ff4040; /* Borda fica da mesma cor quando ativo */
 }
 
 .dot:hover {
     cursor: pointer;
 }
-
-.dot.active {
-    background-color: #ff4040;
-}
-
 /* Estilos de interatividade */
 * {
     cursor: default;
+}
+
+/* Divisor triangular entre o slider e a seção "Sobre Mim" */
+.triangle-divider {
+    width: 0;
+    height: 0;
+    border-left: 50vw solid transparent;  /* Metade da largura da viewport */
+    border-right: 50vw solid transparent; /* Metade da largura da viewport */
+    border-top: 80px solid #1d1d1d;       /* Aumentei a altura da borda superior */
+    margin-bottom: -1px;
+}
+
+.slider h1 {
+    font-family: 'BigNoodleTitling', sans-serif;
+    font-size: 76px;
+    position: relative; /* Necessário para o pseudo-elemento */
+    display: inline-block; /* Permite controle preciso do pseudo-elemento */
+    padding: 10px 20px; /* Adiciona um pouco de espaço ao redor do texto */
+}
+
+/* Traço superior no início do texto */
+.slider h1::before {
+    content: '';
+    position: absolute;
+    top: -15px; /* Ajuste a distância da borda superior */
+    left: 0;
+    width: 20px; /* Comprimento do traço superior */
+    border-top: 3px solid #ff4040; /* Cor e espessura do traço superior */
+}
+
+/* Traço inferior no final do texto */
+.slider h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* Ajuste a distância da borda inferior */
+    right: 0;
+    width: 20px; /* Comprimento do traço inferior */
+    border-bottom: 3px solid #ff4040; /* Cor e espessura do traço inferior */
+}
+
+.slider p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600; /* Utilizando Raleway SemiBold */
+    font-size: 16px;
 }
