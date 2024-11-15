@@ -87,3 +87,39 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
         });
     });
 });
+
+// Função para verificar se um elemento está visível na tela
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Função para aplicar animação nas partes internas (foto e texto) da seção "Sobre Mim"
+function checkVisibility() {
+    const aboutLeft = document.querySelector('.about-left');
+    const aboutRight = document.querySelector('.about-right');
+
+    // Se as partes internas da seção estiverem visíveis, aplica a animação
+    if (isElementInViewport(aboutLeft) || isElementInViewport(aboutRight)) {
+        aboutLeft.style.transform = 'translateX(0)';
+        aboutLeft.style.opacity = '1'; // Aparece a foto
+
+        aboutRight.style.transform = 'translateX(0)';
+        aboutRight.style.opacity = '1'; // Aparece o conteúdo
+
+        // Remover o evento para que a animação aconteça apenas uma vez
+        window.removeEventListener('scroll', checkVisibility);
+    }
+}
+
+// Adiciona o evento de rolagem para detectar quando a seção entra na tela
+window.addEventListener('scroll', checkVisibility);
+
+// Chama a função para verificar caso a seção já esteja visível ao carregar a página
+checkVisibility();
+

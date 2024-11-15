@@ -6,6 +6,11 @@ body {
     color: #333;
 }
 
+html, body {
+    overflow-x: hidden; /* Impede o scroll horizontal */
+    width: 100%; /* Garante que o conteúdo ocupe a largura da tela */
+}
+
 /* Estilo do Header */
 header {
     display: flex;
@@ -28,7 +33,7 @@ header {
 }
 
 .logo span {
-    color: #ff4040;
+    color: #e13700;
     cursor: pointer;
 }
 
@@ -61,7 +66,7 @@ nav {
 }
 
 .nav-links li a:hover {
-    color: #ff4040;
+    color: #e13700;
 }
 
 header::after {
@@ -85,7 +90,7 @@ header::after {
     text-align: center;
     background-color: #1d1d1d;
     color: #ffffff;
-    padding: 0px 20px; /* Aumentei a altura aqui */
+    padding: 50px 0px 0px; /* Aumentei a altura aqui */
     cursor: default;
 }
 
@@ -125,8 +130,8 @@ header::after {
 }
 
 .dot.active {
-    background-color: #ff4040; /* Preenchido quando ativo */
-    border-color: #ff4040; /* Borda fica da mesma cor quando ativo */
+    background-color: #e13700; /* Preenchido quando ativo */
+    border-color: #e13700; /* Borda fica da mesma cor quando ativo */
 }
 
 .dot:hover {
@@ -145,6 +150,7 @@ header::after {
     border-right: 50vw solid transparent; /* Metade da largura da viewport */
     border-top: 80px solid #1d1d1d;       /* Aumentei a altura da borda superior */
     margin-bottom: -1px;
+    background: #ffffff;
 }
 
 .slider h1 {
@@ -163,7 +169,7 @@ header::after {
     top: -15px; /* Ajuste a distância da borda superior */
     left: 0;
     width: 20px; /* Comprimento do traço superior */
-    border-top: 3px solid #ff4040; /* Cor e espessura do traço superior */
+    border-top: 3px solid #e13700; /* Cor e espessura do traço superior */
 }
 
 /* Traço inferior no final do texto */
@@ -173,11 +179,414 @@ header::after {
     bottom: -15px; /* Ajuste a distância da borda inferior */
     right: 0;
     width: 20px; /* Comprimento do traço inferior */
-    border-bottom: 3px solid #ff4040; /* Cor e espessura do traço inferior */
+    border-bottom: 3px solid #e13700; /* Cor e espessura do traço inferior */
 }
 
 .slider p {
     font-family: 'Raleway', sans-serif;
     font-weight: 600; /* Utilizando Raleway SemiBold */
-    font-size: 20px;
+    font-size: 30px;
 }
+
+/* Estilo da Seção Sobre Mim */
+#about {
+    background-color: #ffffff; /* Cor de fundo da seção */
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px auto;
+    border: 2px solid #e13700;
+}
+
+/* A foto começa fora da tela à esquerda */
+.about-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100px); /* Inicialmente fora da tela */
+    opacity: 0; /* Começa invisível */
+    transition: transform 1s ease, opacity 1s ease; /* Transição para animação */
+}
+
+/* O conteúdo da direita começa fora da tela à direita */
+.about-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    transform: translateX(100px); /* Inicialmente fora da tela */
+    opacity: 0; /* Começa invisível */
+    transition: transform 1s ease, opacity 1s ease; /* Transição para animação */
+}
+
+.about-right h2 {
+    font-family: 'BigNoodleTitling', sans-serif;
+    font-size: 40px;
+    color: #e13700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.about-right h2::before,
+.about-right h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 3px;
+    background-color: #e13700;
+}
+
+.about-right h2::before {
+    left: 10%;
+    transform: translateY(-50%);
+}
+
+.about-right h2::after {
+    right: 10%;
+    transform: translateY(-50%);
+}
+
+.about-right p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #a5a5a5;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+/* Garantir que a animação seja ativada em todas as telas */
+@media (max-width: 1024px) {
+    /* Para telas de até 1024px, fazer a animação visível */
+    .about-left, 
+    .about-right {
+        opacity: 1; /* Visível */
+        transform: translateX(0); /* Não desloca */
+        transition: opacity 1s ease, transform 1s ease; /* Garantir animação */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Coloca os elementos em coluna em telas menores */
+    }
+
+    .about-left,
+    .about-right {
+        opacity: 1; /* Torna visível */
+        transform: translateX(0); /* Remove o efeito de deslocamento */
+        transition: opacity 1s ease, transform 1s ease; /* Transição para animação */
+    }
+
+    .about-right h2 {
+        font-size: 30px; /* Ajuste no tamanho do título */
+    }
+
+    .about-right p {
+        font-size: 16px; /* Ajuste no tamanho do texto */
+    }
+}
+
+
+
+/* Estilo da Seção Nossos Serviços */
+#services {
+    background-color: #ffffff; /* Cor de fundo da seção */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#services h2 {
+    font-family: 'BigNoodleTitling', sans-serif;
+    font-size: 40px;
+    color: #e13700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+#services h2::before,
+#services h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 3px;
+    background-color: #e13700;
+}
+
+#services h2::before {
+    left: -20%;
+    transform: translateY(-50%);
+}
+
+#services h2::after {
+    right: -20%;
+    transform: translateY(-50%);
+}
+
+/* Estilo dos serviços - exibe 4 serviços na mesma linha */
+.services-container {
+    display: flex;
+    justify-content: space-between; /* Espaço igual entre os serviços */
+    flex-wrap: nowrap; /* Não permite que quebrem para a linha de baixo */
+    gap: 30px; /* Espaçamento entre os serviços */
+    margin-top: 40px;
+}
+
+.service-item {
+    background-color: #f7f7f7;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 23%; /* Define a largura dos serviços para 4 itens na linha */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h3 {
+    font-family: 'BigNoodleTitling', sans-serif;
+    font-size: 30px;
+    color: #e13700;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #a5a5a5;
+    line-height: 1.6;
+}
+
+/* Estilo da Seção Projetos */
+#projects {
+    background-color: #ffffff; /* Cor de fundo da seção */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#projects h2 {
+    font-family: 'BigNoodleTitling', sans-serif;
+    font-size: 40px;
+    color: #e13700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+#projects h2::before,
+#projects h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 3px;
+    background-color: #e13700;
+}
+
+#projects h2::before {
+    left: -30%;
+    transform: translateY(-50%);
+}
+
+#projects h2::after {
+    right: -30%;
+    transform: translateY(-50%);
+}
+
+/* Estilo dos projetos - exibe 4 projetos na mesma linha */
+.projects-container {
+    display: flex;
+    justify-content: space-between; /* Espaço igual entre os projetos */
+    flex-wrap: nowrap; /* Não permite que quebrem para a linha de baixo */
+    gap: 30px; /* Espaçamento entre os projetos */
+    margin-top: 40px;
+}
+
+.project-item {
+    background-color: #f7f7f7;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 23%; /* Define a largura dos projetos para 4 itens na linha */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-item h3 {
+    font-family: 'BigNoodleTitling', sans-serif;
+    font-size: 30px;
+    color: #e13700;
+    margin-bottom: 15px;
+}
+
+.project-item p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #a5a5a5;
+    line-height: 1.6;
+}
+
+/* Estilo da Seção Contato */
+#contact {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#contact h2 {
+    font-family: 'BigNoodleTitling', sans-serif;
+    font-size: 40px;
+    color: #e13700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    color: #a5a5a5;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Container de Informações de Contato */
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+}
+
+.contact-item i {
+    font-size: 40px;
+    color: #e13700;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #a5a5a5;
+}
+
+.contact-item a {
+    color: #e13700;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        margin: 15px 0;
+    }
+
+    #contact h2 {
+        font-size: 30px;
+    }
+
+    #contact p {
+        font-size: 16px;
+    }
+}
+
+
+/* Estilos do Footer */
+footer {
+    position: relative;
+    background-color: #1d1d1d;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    z-index: 1; /* Para garantir que o conteúdo do footer fique sobre o triângulo */
+}
+
+footer .footer-triangle {
+    position: absolute;
+    top: -20px; /* Coloca o triângulo para cima */
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    border-bottom: 20px solid #1d1d1d; /* Agora a borda inferior cria o triângulo apontando para cima */
+    z-index: -1; /* Coloca o triângulo atrás do conteúdo do footer */
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Font Awesome Fix */
+.fab {
+    font-size: 24px;
+    color: #e13700;
+}
+
+.fab:hover {
+    color: #f5a623;
+}
+
+
+
+
+
+
+
+
