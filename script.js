@@ -123,3 +123,7 @@ window.addEventListener('scroll', checkVisibility);
 // Chama a função para verificar caso a seção já esteja visível ao carregar a página
 checkVisibility();
 
+document.getElementById('hamburger-menu').addEventListener('click', function() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active'); // Alterna a visibilidade do menu
+});

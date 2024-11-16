@@ -583,10 +583,41 @@ footer p {
     color: #f5a623;
 }
 
+/* Estilo para o menu hambúrguer */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
 
+.hamburger .bar {
+    width: 30px;
+    height: 4px;
+    margin: 4px 0;
+    background-color: #e13700;
+}
 
+/* Estilo da versão mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Esconde o menu na versão mobile */
+        position: absolute;
+        top: 70px; /* Ajuste conforme necessário */
+        right: 0;
+        background-color: #1d1d1d;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
 
+    .nav-links.active {
+        display: block; /* Exibe o menu quando estiver ativo */
+    }
 
-
-
-
+    .hamburger {
+        display: flex; /* Exibe o botão do menu hambúrguer */
+        position: absolute;
+        top: 13px;
+        right: 20px;
+    }
+}
