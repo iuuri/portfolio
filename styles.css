@@ -188,7 +188,7 @@ header::after {
     font-size: 1.563vw;
 }
 
-.slides-container a{
+#ctn-projetos {
     border: 2px solid #ffffff; /* Cor e espessura do traço inferior */
     padding: 10px;
     color: #ffffff;
