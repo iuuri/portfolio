@@ -74,7 +74,7 @@ showSlide(currentSlideIndex);
 startSlideShow();
 
 // Função para rolar suavemente para a seção ao clicar no menu
-document.querySelectorAll('.nav-links a').forEach(anchor => {
+document.querySelectorAll('.nav-links a', '.slide a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         

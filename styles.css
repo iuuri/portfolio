@@ -155,11 +155,11 @@ header::after {
 
 .slider h1 {
     font-family: 'BigNoodleTitling', sans-serif;
-    font-size: 100px;
+    font-size: 3.646vw;
     position: relative; /* Necessário para o pseudo-elemento */
     display: inline-block; /* Permite controle preciso do pseudo-elemento */
     padding: 10px 20px; /* Adiciona um pouco de espaço ao redor do texto */
-    margin: 15;
+    margin: 15px;
 }
 
 /* Traço superior no início do texto */
@@ -185,7 +185,20 @@ header::after {
 .slider p {
     font-family: 'Raleway', sans-serif;
     font-weight: 600; /* Utilizando Raleway SemiBold */
-    font-size: 30px;
+    font-size: 1.563vw;
+}
+
+.slide a{
+    border: 2px solid #ffffff; /* Cor e espessura do traço inferior */
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #e13700;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    top: 60px;
+
 }
 
 /* Estilo da Seção Sobre Mim */
