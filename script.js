@@ -127,3 +127,15 @@ document.getElementById('hamburger-menu').addEventListener('click', function() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active'); // Alterna a visibilidade do menu
 });
+
+// Função para rolar suavemente para a seção ao clicar no botão
+document.getElementById('ctn-projetos').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const targetSection = document.getElementById('projects'); // Substitua 'projetos' pelo id da sua seção de projetos
+    
+    window.scrollTo({
+        top: targetSection.offsetTop - 70, // Ajuste o valor conforme necessário para o espaçamento desejado
+        behavior: 'smooth'
+    });
+});
